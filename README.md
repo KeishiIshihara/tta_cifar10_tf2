@@ -1,19 +1,20 @@
-# Test-Time Augmentation on CIFAR10
+# Test-Time Augmentation on CIFAR10 with TensorFlow2
+
+Test-Time AugmentationのTensorFlow2実装で、Cifar10を使い実験した例です。  
 
 Test-Time Augmentation(TTA)とは、テスト時にもAugmentationを施し、複製したデータの分だけモデルの出力を複数得て、その結果を統合して最終的な予測とする方法です。[1]  
-ここでは、TTA時の画像加工(Augmentation)としてHorizontal Flipのみを使用しており、推論時はオリジナルと画像加工分あわせて２種類の出力が得られ、以下の方法でそれらを統合しています。
+ここでは、TTA時の画像加工(Augmentation)としてHorizontal Flipのみを使用しており、推論時はオリジナルと画像加工分あわせて２種類の出力が得られ、以下の方法でそれらを統合しています。  
 - Argmax(Mean(Softmax(Logits1), Softmax(Logits2)))
 
 5回分異なるシード値で実行した結果が以下のグラフとなります。  
+<img src=report/summary.png width=px height=px >
+
 - `no tricks`: Augmentation、TTA両方不採用
 - `aug`: Augmentationのみ採用
 - `tta`: TTAのみ採用
 - `aug & tta`: Augmentation、TTA両方採用
 
-Test Accuracyは100epoch目の各モデルで推論を行って計算しています。
-<!-- <img src=report/tta_experiment.png width=px height=px > -->
-<img src=report/summary.png width=px height=px >
-
+Note: Test Accuracyは100epoch目の各モデルで推論を行って計算しています。
 
 ### Dependencies
 - Ubuntu 20.04.1 LTS
