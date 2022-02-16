@@ -1,0 +1,28 @@
+version: '2.4'
+services:
+    vae_trainer: # service name, only for docker-compose
+        build:
+            context: ./
+            dockerfile: Dockerfile
+            args:
+                - tensorflow_version=${TENSORFLOW_VERSION}
+                - work_dir=${WORK_DIR}
+        container_name: ${CONTAINER_NAME}
+        image: ${IMAGE_NAME}
+        volumes:
+            - ${HOST_DIR}:${WORK_DIR}
+            # - ${BASHRC}:/root/.bashrc
+            # - ${DATASET_DIR}:/root/dataset
+            # - ${CACHE_DIR}:/root/tf-cache
+        runtime: nvidia
+        tty: true
+        shm_size: 4G
+        privileged: true
+        environment:
+            - DISPLAY
+            - QT_X11_NO_MITSHM=1
+            - NVIDIA_VISIBLE_DEVICES=all
+            - NVIDIA_DRIVER_CAPABILITIES=all
+            - NVIDIA_REQUIRE_CUDA=cuda>=10.0
+        network_mode: host
+        working_dir: ${WORK_DIR}

@@ -1,0 +1,26 @@
+{
+    "aug": false,
+    "tta": true,
+    "log_dir": "logs/",
+    "ckpt_dir": "ckpts/",
+    "report_dir": "report/",
+    "batch_size": 128,
+    "epochs": 100,
+    "initial_lr": 0.005,
+    "num_classes": 10,
+    "test_size": 0.2,
+    "random_seed": 42,
+    "config": "03_no_aug_tta.yaml",
+    "debug": false,
+    "gpu": "0",
+    "not_record": false,
+    "seed": "43",
+    "verbose": 1,
+    "wandb": false,
+    "run_id": "03_no_aug_tta_20220116-073303",
+    "test_loss_score": 1.0369030237197876,
+    "test_acc_score": 0.8281999826431274,
+    "augmentations_used": [
+        "horizontal_flip_np"
+    ]
+}

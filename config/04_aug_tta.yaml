@@ -1,0 +1,13 @@
+aug: True
+tta: True
+
+log_dir: 'logs/'
+ckpt_dir: 'ckpts/'
+report_dir: 'report/'
+
+batch_size: 128
+epochs: 100
+initial_lr: 0.005
+num_classes: 10
+test_size: 0.2
+random_seed: 42

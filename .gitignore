@@ -1,0 +1,6 @@
+.DS_Store
+*checkpoints
+logs
+ckpts
+old
+__pycache__

@@ -1,0 +1,26 @@
+{
+    "aug": true,
+    "tta": true,
+    "log_dir": "logs/",
+    "ckpt_dir": "ckpts/",
+    "report_dir": "report/",
+    "batch_size": 128,
+    "epochs": 100,
+    "initial_lr": 0.005,
+    "num_classes": 10,
+    "test_size": 0.2,
+    "random_seed": 42,
+    "config": "04_aug_tta.yaml",
+    "debug": false,
+    "gpu": "0",
+    "not_record": false,
+    "seed": "44",
+    "verbose": 1,
+    "wandb": false,
+    "run_id": "04_aug_tta_20220116-121400",
+    "test_loss_score": 0.9146356582641602,
+    "test_acc_score": 0.8539999723434448,
+    "augmentations_used": [
+        "horizontal_flip_np"
+    ]
+}
